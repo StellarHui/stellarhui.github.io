@@ -1,0 +1,24 @@
+/* 英文使用Times New Roman */
+@font-face {
+  font-family: 'EnglishFont';
+  font-display: swap;
+  src: local('Times New Roman');
+}
+
+/* 中文使用思源宋体 */
+@font-face {
+  font-family: 'ChineseFont';
+  font-display: swap;
+  /* src: url('../font/SourceHanSerifSC-Regular.ttf') format('truetype'); */
+  src: local('Noto Serif SC');
+}
+
+/* 应用字体规则 */
+body {
+  font-family: 'EnglishFont', 'ChineseFont', serif;
+}
+
+/* 单独设置代码块字体（可选） */
+code, kbd, pre, samp {
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+}
