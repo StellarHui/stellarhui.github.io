@@ -5,10 +5,10 @@
     
     <entry>
       <title>3D集成芯片</title>
-      <link href="/2025/07/19/%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/3D%E9%9B%86%E6%88%90%E8%8A%AF%E7%89%87/"/>
-      <url>/2025/07/19/%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/3D%E9%9B%86%E6%88%90%E8%8A%AF%E7%89%87/</url>
+      <link href="/2025/07/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/3D%E9%9B%86%E6%88%90%E8%8A%AF%E7%89%87/"/>
+      <url>/2025/07/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/3D%E9%9B%86%E6%88%90%E8%8A%AF%E7%89%87/</url>
       
-        <content type="html"><![CDATA[<h1 id="d集成芯片">3D集成芯片</h1><p>封装技术：</p><p><img src="image-20250719140544510.png" /></p><blockquote><p><strong>参考文献</strong>：Die-stacking Architecture.</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h1 id="d集成芯片">3D集成芯片</h1><h2 id="d集成与封装技术">3D集成与封装技术</h2><h3 id="从2d-ic到3d-ic">从2D IC到3D IC</h3><table><colgroup><col style="width: 21%" /><col style="width: 36%" /><col style="width: 42%" /></colgroup><thead><tr><th><strong>维度</strong></th><th><strong>2D IC</strong></th><th><strong>3D IC</strong></th></tr></thead><tbody><tr><td><strong>结构</strong></td><td>单层平面布局</td><td>多层垂直堆叠（逻辑层、缓存层、DRAM层等）</td></tr><tr><td><strong>互连方式</strong></td><td>金属线水平绕行（长距离，高RC延迟）</td><td>TSV垂直直连（短距离，低RC延迟）</td></tr><tr><td><strong>互连密度</strong>（带宽）</td><td>受限于引脚数量（带宽瓶颈）</td><td>TSV密度 <strong>&gt;1000个/mm²</strong>（高带宽）</td></tr><tr><td><strong>成本、散热</strong></td><td>成本低，散热快</td><td>成本高，散热慢</td></tr></tbody></table><h3 id="d封装技术">3D封装技术</h3><p>​ <strong>3D封装技术</strong>通过封装级堆叠独立芯片（如AppleA8处理器堆叠CPU与DRAM），使用引线键合（WireBonding）或微凸块连接，通信依赖<strong>片外信号</strong>。常见的有2种：</p><p><img src="./3D集成芯片/image-20250719140544510.png" /></p><h3 id="d集成技术">3D集成技术</h3><p>​ 该技术产生的是<strong>3DIC</strong>，通过<strong>硅通孔（TSV）</strong>实现层间垂直互联，提供<strong>片内级</strong>高密度连接（微米级间距）。该技术具有下面的优势：</p><ul><li><strong>线长缩减（Wire LengthReduction）</strong>：带来通信延迟、功耗的减少。</li><li><strong>内存带宽提升（Memory BandwidthImprovement）</strong>：使用3D架构，可以<strong>堆叠DRAM作末级缓存（LLC）</strong>或者<strong>堆叠DRAM作主存</strong>。</li><li><strong>垂直异构集成（HeterogeneousIntegration）</strong>：不同功能层（逻辑/存储/光子）可独立制造，通过TSV互联。</li><li><strong>成本效益（Cost-effectiveArchitecture）</strong>：分割大芯片为小芯片堆叠，提升总体良率。（然而TSV会增加成本）</li></ul><h2 id="d堆叠处理器设计">3D堆叠处理器设计</h2><h2 id="d-noc设计">3D NoC设计</h2><h2 id="d散热模型">3D散热模型</h2><h2 id="d成本模型">3D成本模型</h2><blockquote><p><strong>参考文献</strong>：Die-stacking Architecture.</p></blockquote>]]></content>
       
       
       <categories>
