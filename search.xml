@@ -18,6 +18,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> 芯片设计 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -37,6 +43,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> 设计空间探索 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -55,6 +67,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 芯片设计基础 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -77,7 +95,7 @@
       
         <tags>
             
-            <tag> 芯片设计 </tag>
+            <tag> 芯片设计基础 </tag>
             
         </tags>
       
