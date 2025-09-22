@@ -4,11 +4,30 @@
   
     
     <entry>
-      <title>课程导论</title>
-      <link href="/2025/09/18/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E9%AA%8C/%E8%AF%BE%E7%A8%8B%E5%AF%BC%E8%AE%BA/"/>
-      <url>/2025/09/18/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E9%AA%8C/%E8%AF%BE%E7%A8%8B%E5%AF%BC%E8%AE%BA/</url>
+      <title>Introduction to Computer Network</title>
+      <link href="/2025/09/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CLec1%EF%BC%9A%E7%AE%80%E4%BB%8B/"/>
+      <url>/2025/09/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CLec1%EF%BC%9A%E7%AE%80%E4%BB%8B/</url>
       
-        <content type="html"><![CDATA[<h2 id="成绩构成"><a href="#成绩构成" class="headerlink" title="成绩构成"></a>成绩构成</h2><p>60%平时小测：会改实验的参数来出题，做了实验基本就没问题；而一些理论的东西不会特别考。要深刻理解实验，平时积极思考和提问。但是还要写实验报告（占分0分，只要写完整即可，但是必须要交；成绩完全以Quiz为主）。</p><p>40%期末考：会着重考一些理论的东西。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h2><h3 id="Access-to-Information"><a href="#Access-to-Information" class="headerlink" title="Access to Information"></a>Access to Information</h3><ul><li><p><strong>Client-Server Model</strong>: a client explicitly requests information from a server that hosts that information.</p><p><strong>Example</strong>: web applications. </p><p><strong>Implementation</strong>: request-reply model.</p></li></ul><p><img src="/2025/09/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CLec1%EF%BC%9A%E7%AE%80%E4%BB%8B/image-20250922101015164.png"></p><ul><li><p><strong>Peer-to-Peer Communication</strong>: every person can, in principle, communicate with others in the same group. Every person can thus act both as a client and a server.</p><p><strong>Example</strong>: IoT.</p><p><strong>Implementation</strong>: When a client wants to acquire some content, </p><ul><li>The first step (1) is to get <strong>a meta-data file</strong> from a public web server hereafter called <strong>Torrent Repository Server</strong>（种子文件服务器）. This file contains <strong>the address of one or more Trackers</strong> and information about the content. </li><li>The next step (2) performed by the Client is to <strong>announce to the Tracker its desire to join the swarm</strong>, which is answered with a list of Peers sharing the same content. This announce is performed periodically, so that the Tracker can keep the list of Peers updated.注意：Tracker不存储文件内容，而是协调用户之间的连接。它<strong>记录哪些用户共享同一个文件</strong>，帮助新加入的用户找到其他可连接的peer。</li><li>Finally, the last step (3) is to try to establish connections with other peers in order to start sending and receiving content. These connections operate over TCP and use the PeerWire Protocol.</li></ul></li></ul><p><img src="/2025/09/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CLec1%EF%BC%9A%E7%AE%80%E4%BB%8B/image-20250922101129617.png"></p><blockquote><p>上图中，BitTorrent将文件分块下载，用户可以从多个peer同时下载（或上传）不同块，提高效率。Seeder（做种者）表示拥有全部文件的peer，只能上传文件快；Leecher（吸附者）表示拥有部分文件的peer，可以同时上传或下载文件块。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>软件安全原理与实践：课程导论</title>
+      <link href="/2025/09/18/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/%E8%AF%BE%E7%A8%8B%E5%AF%BC%E8%AE%BA/"/>
+      <url>/2025/09/18/%E8%BD%AF%E4%BB%B6%E5%AE%89%E5%85%A8%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/%E8%AF%BE%E7%A8%8B%E5%AF%BC%E8%AE%BA/</url>
+      
+        <content type="html"><![CDATA[<h2 id="成绩构成"><a href="#成绩构成" class="headerlink" title="成绩构成"></a>成绩构成</h2><p>60%平时小测：会改实验的参数来出题，做了实验基本就没问题；而一些理论的东西不会特别考。要深刻理解实验，平时积极思考和提问。但是还要写实验报告（占分0分，只要写完整即可，但是必须要交；成绩完全以Quiz为主）。</p><p>40%期末考：会着重考一些理论的东西。</p><h2 id="Linux-Basics"><a href="#Linux-Basics" class="headerlink" title="Linux Basics"></a>Linux Basics</h2>]]></content>
       
       
       <categories>
