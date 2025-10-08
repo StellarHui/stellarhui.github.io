@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>计算机网络（2）：物理层</title>
+      <link href="/2025/10/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CLec2%EF%BC%9A%E7%89%A9%E7%90%86%E5%B1%82/"/>
+      <url>/2025/10/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CLec2%EF%BC%9A%E7%89%A9%E7%90%86%E5%B1%82/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>本章的内容涉及大量的（物理等）概念，很多都是通识性质，根本不是计算机人才需要仔细研究的内容。因此，不要重点关注有什么传输介质，而要关注<strong>传输介质上是如何传输数据比特流的</strong>。</p></blockquote><h2 id="通信基础"><a href="#通信基础" class="headerlink" title="通信基础"></a>通信基础</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="数据、信号和码元"><a href="#数据、信号和码元" class="headerlink" title="数据、信号和码元"></a>数据、信号和码元</h4><p>计算机之间通信地目的是传输信息。（1）<strong>数据 (Data)<strong>是传递信息的</strong>实体</strong>（如文字、图像，本质是比特流）。（2）<strong>信号 (Signal)<strong>则是数据的</strong>电气或电磁表现</strong>，是数据在传输过程中的存在形式（如网线或USB线里传输的一系列高低电平）。根据取值，（1）（2）都可分为2类：</p><ul><li>**模拟 (Analogous)**数据/信号：某范围内取值连续；</li><li>**数字 (Digital)**数据/信号：取值离散。</li></ul><p>那么，信号如何携带信息？我们使用一个<strong>固定时长</strong>的信号波形来代表一个 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.179ex" height="1.595ex" role="img" focusable="false" viewBox="0 -694 521 705"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g></g></g></svg></mjx-container> 进制数字（称为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.179ex" height="1.595ex" role="img" focusable="false" viewBox="0 -694 521 705"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g></g></g></svg></mjx-container>进制（3）<strong>码元 (Symbol)</strong>），这个<strong>时长</strong>称为<strong>码元宽度</strong>或<strong>信号周期</strong>。例如，在一个信号周期内出现2个信号，每个信号就对应一个二进制数，改码元携带1 bit的信息。</p><h4 id="信源、信道与信宿"><a href="#信源、信道与信宿" class="headerlink" title="信源、信道与信宿"></a>信源、信道与信宿</h4><p>一个通信系统主要包括三个部分：</p><ul><li><strong>信源 (Source)</strong>：产生和发送数据的源头。</li><li><strong>信宿 (Destination)</strong>：接收数据的终点。</li><li><strong>信道 (Channel)</strong>：信号的传输媒介。一条双向通信线路通常包含一个发送信道和一个接收信道。</li></ul><p>按照<strong>信源和信宿的交互方式</strong>，通信可分为下面3种类型：</p><ol><li><strong>单向通信 (Simplex Communication)</strong>：只有一个方向的通信，无反向交互。如：广播。</li><li><strong>半双工通信 (Half-Duplex Communication)</strong>：通信双方都可以发送或接收，但<strong>不能同时</strong>进行。如：对讲机。</li><li><strong>全双工通信 (Full-Duplex Communication)</strong>：通信双方可以<strong>同时</strong>发送和接收数据。如：电话。</li></ol><p><img src="/2025/10/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CLec2%EF%BC%9A%E7%89%A9%E7%90%86%E5%B1%82/image-20251008190507068.png"></p><h3 id="傅里叶展开"><a href="#傅里叶展开" class="headerlink" title="傅里叶展开"></a>傅里叶展开</h3><h2 id="传输介质"><a href="#传输介质" class="headerlink" title="传输介质"></a>传输介质</h2><h2 id="物理层设备"><a href="#物理层设备" class="headerlink" title="物理层设备"></a>物理层设备</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>分段法</title>
       <link href="/2025/10/05/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%AE%B5%E6%B3%95/"/>
       <url>/2025/10/05/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%AE%B5%E6%B3%95/</url>
