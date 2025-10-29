@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>计算机网络（3）：数据链路层</title>
+      <link href="/2025/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CLec3%EF%BC%9A%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/"/>
+      <url>/2025/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CLec3%EF%BC%9A%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/</url>
+      
+        <content type="html"><![CDATA[<h2 id="数据链路层的功能"><a href="#数据链路层的功能" class="headerlink" title="数据链路层的功能"></a>数据链路层的功能</h2><h3 id="数据链路层所在的位置"><a href="#数据链路层所在的位置" class="headerlink" title="数据链路层所在的位置"></a>数据链路层所在的位置</h3><h3 id="不同的服务模式"><a href="#不同的服务模式" class="headerlink" title="不同的服务模式"></a>不同的服务模式</h3><h3 id="一些科学问题"><a href="#一些科学问题" class="headerlink" title="一些科学问题"></a>一些科学问题</h3><h2 id="组帧"><a href="#组帧" class="headerlink" title="组帧"></a>组帧</h2><p>发送方需要将来自网络层的<strong>分组</strong>组装成<strong>帧</strong>。这样，出错时只需重发有错的帧即可，不需全部重发。组帧时需要注意下面的问题：（1）帧定界；（2）帧同步；（3）透明传输。</p><p><img src="/2025/10/05/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%AE%B5%E6%B3%95/%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CLec3%EF%BC%9A%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/image-20251027110429227.png"></p><h3 id="字符记数法"><a href="#字符记数法" class="headerlink" title="字符记数法"></a>字符记数法</h3><p><strong>在帧的首部使用一个计数字段来表示该帧总共包含的字节数</strong>（包含计数字段本身），不需要帧的尾部来定界。</p><p><img src="/2025/10/05/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%AE%B5%E6%B3%95/%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CLec3%EF%BC%9A%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/image-20251027110931131.png"></p><p><strong>缺点</strong>：一旦计数字段（byte count）出现错误，会影响到帧定界，错误会（极大可能）影响到所有的帧。</p><h3 id="字节填充法"><a href="#字节填充法" class="headerlink" title="字节填充法"></a>字节填充法</h3><p>之前的字符计数法容错率极低的原因是：<strong>一旦某个帧出现错误，没办法将错误限制在这个帧当中</strong>。为此，可以使用特定字节进行帧定界：SOH表示帧开始，EOT表示帧结束，ESC为转义字符（byte stuffing技术）。</p><p><img src="/2025/10/05/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%AE%B5%E6%B3%95/%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CLec3%EF%BC%9A%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/image-20251027112205911.png"></p><blockquote><p>PPT中将SOH与EOT统一表示为FLAG：</p><p><img src="/2025/10/05/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%AE%B5%E6%B3%95/%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CLec3%EF%BC%9A%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/image-20251027112314059.png"></p></blockquote><h3 id="零比特填充法"><a href="#零比特填充法" class="headerlink" title="零比特填充法"></a>零比特填充法</h3><p>可以理解为上面字节填充法的更优实现，它使用01111110来作为FLAG。为了保证payload中的01111110不被误认为FLAG，发送方在组帧前扫描整个字段，每遇到5个连续的0就在其后插入一个1（bit stuffing技术）。</p><p><img src="/2025/10/05/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%AE%B5%E6%B3%95/%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CLec3%EF%BC%9A%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/image-20251027112914559.png"></p><h3 id="违规编码法"><a href="#违规编码法" class="headerlink" title="违规编码法"></a>违规编码法</h3><p>物理层使用CDMA，曼彻斯特方法等编码方法时，会有一些“违规编码序列”不会被用来编码真实数据，这些序列可以被用作FLAG。例如：</p><p><img src="/2025/10/05/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%AE%B5%E6%B3%95/%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CLec3%EF%BC%9A%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/image-20251027114014252.png"></p><p>上图中，coreword用5B来编码4B的数据，因此如11111，00000等未被使用的序列可以用来做FLAG。</p><h2 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h2><p>实际链路传输不理想，会出现<strong>比特差错</strong>（传输差错的一种）：1会变成0，0会变成1。现有的<strong>编码技术</strong>通常（1）自动重传请求（ARQ）和（2）前向纠错（FEC）来进行差错控制。因此，差错控制可以分为**（1）检错编码<strong>和</strong>（2）纠错编码**这2种方法。</p><h3 id="检错编码"><a href="#检错编码" class="headerlink" title="检错编码"></a>检错编码</h3><h4 id="奇偶校验码"><a href="#奇偶校验码" class="headerlink" title="奇偶校验码"></a>奇偶校验码</h4><h4 id="循环冗余码"><a href="#循环冗余码" class="headerlink" title="循环冗余码"></a>循环冗余码</h4><h3 id="纠错编码"><a href="#纠错编码" class="headerlink" title="纠错编码"></a>纠错编码</h3><h4 id="纠错理论"><a href="#纠错理论" class="headerlink" title="纠错理论"></a>纠错理论</h4><p>如何衡量一种编码方法的纠错能力？</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>矩阵微分与梯度的简单计算</title>
       <link href="/2025/10/20/%E6%95%B0%E5%AD%A6/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%AE%80%E5%8D%95%E8%AE%A1%E7%AE%97/"/>
       <url>/2025/10/20/%E6%95%B0%E5%AD%A6/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC%E7%AE%80%E5%8D%95%E8%AE%A1%E7%AE%97/</url>
